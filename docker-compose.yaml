@@ -1,0 +1,59 @@
+version: '3.7'
+
+services:
+  jenkins:
+    image: jenkins:1.0
+    build: jenkins
+    container_name: jenkins
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - JENKINS_OPTS=--argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins-home:/var/jenkins_home
+      - jenkins-maven-repo:/root/.m2
+      - jenkins-npm-repo:/root/.npm
+      - jenkins-sonar-cache:/root/.sonar/cache
+    dns:
+      - 8.8.8.8
+  sonarqube:
+    image: sonarqube:8.7.1-community
+    container_name: sonarqube
+    ports:
+      - 9000:9000
+    environment:
+      - sonar.jdbc.username=sonar
+      - sonar.jdbc.password=sonar
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-extensions:/opt/sonarqube/extensions
+      - sonarqube-bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+  nexus:
+    image: sonatype/nexus3:3.30.0
+    container_name: nexus
+    volumes:
+      - nexus-data:/nexus-data
+    ports:
+      - 8081:8081
+volumes:
+  jenkins-maven-repo:
+    name: jenkins-maven-repo
+  jenkins-home:
+    name: jenkins-home
+  jenkins-npm-repo:
+    name: jenkins-npm-repo
+  jenkins-sonar-cache:
+    name: jenkins-sonar-cache
+  nexus-data:
+    name: nexus-data
+  sonarqube-data:
+    name: sonarqube-data
+  sonarqube-extensions:
+    name: sonarqube-extensions
+  sonarqube-bundled-plugins:
+    name: sonarqube-bundled-plugins
