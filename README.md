@@ -66,7 +66,7 @@ In Jenkins:
 
 We have prepared one sample project for this session using Maven.
 
-Maven - [https://app.celfocus.com/gitlab/QA/training/qa-training-cicd-mvn](https://app.celfocus.com/gitlab/QA/training/qa-training-cicd-mvn) \
+Maven - [https://github.com/qa-automation-challenge/cicd-mvn](https://github.com/qa-automation-challenge/cicd-mvn) \
 
 Go ahead and fork it to your own repository.\
 Now, let's use the feature branching strategy. The first step is to create a new branch named *CICD-001* from develop branch.
