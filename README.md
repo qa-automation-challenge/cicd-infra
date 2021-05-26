@@ -78,7 +78,7 @@ In Jenkins ( [localhost:8080](http://localhost:8080) ) :
  * Enter a new name ex: qa-training-cicd
  * Select "Multibranch Pipeline"
  * Under "Branch Sources", select "Add source" -> "Git"
- * Enter your fork repository name ex: https://github.com/<username>/cicd-mvn.git
+ * Enter your fork repository name ex: https://github.com/username/cicd-mvn.git
  * Under "Credentials", select "Add" -> "Jenkins"
  * In the "Add Credentials" window, fill in your "Username", "Password" and in "ID" fill in "git-credentials". Then press the "Add" button
  * Under "Credentials", select your newly added credential from the dropdown
