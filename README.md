@@ -66,7 +66,7 @@ In Jenkins:
 
 We have prepared one sample project for this session using Maven.
 
-Maven - [https://github.com/qa-automation-challenge/cicd-mvn](https://github.com/qa-automation-challenge/cicd-mvn) \
+Maven - [https://github.com/qa-automation-challenge/cicd-mvn](https://github.com/qa-automation-challenge/cicd-mvn)
 
 Go ahead and fork it to your own repository.\
 Now, let's use the feature branching strategy. The first step is to create a new branch named *CICD-001* from develop branch.
@@ -78,7 +78,7 @@ In Jenkins ( [localhost:8080](http://localhost:8080) ) :
  * Enter a new name ex: qa-training-cicd
  * Select "Multibranch Pipeline"
  * Under "Branch Sources", select "Add source" -> "Git"
- * Enter your fork repository name ex: https://app.celfocus.com/gitlab/nbxxxxx/qa-training-cicd-mvn.git
+ * Enter your fork repository name ex: https://github.com/<username>/cicd-mvn.git
  * Under "Credentials", select "Add" -> "Jenkins"
  * In the "Add Credentials" window, fill in your "Username", "Password" and in "ID" fill in "git-credentials". Then press the "Add" button
  * Under "Credentials", select your newly added credential from the dropdown
